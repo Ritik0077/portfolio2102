@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ritik Goyal – Cloud Support Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F3F6FB;--panel:#FFFFFF;--ink:#0E1B2E;--muted:#54657D;--line:#D5DEEB;--a:#0A7BFF;--b:#00B58E;--node:10,123,255;--term:#0E1B2E;--termink:#BFE9D9;
+  --d:'Sora','Segoe UI',system-ui,sans-serif;--m:'JetBrains Mono',ui-monospace,Consolas,monospace;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)
+}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#070D1A;--panel:#0F1830;--ink:#E8EEFB;--muted:#93A4C3;--line:#1F2D4D;--a:#4C9BFF;--b:#2EE6B8;--node:76,155,255;--term:#050A14;--termink:#9BF0D2}}
+:root[data-theme="dark"]{--bg:#070D1A;--panel:#0F1830;--ink:#E8EEFB;--muted:#93A4C3;--line:#1F2D4D;--a:#4C9BFF;--b:#2EE6B8;--node:76,155,255;--term:#050A14;--termink:#9BF0D2}
+html{scroll-padding-top:5rem;scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.02rem/1.7 var(--d);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--a);outline-offset:3px;border-radius:6px}
+#net{position:fixed;inset:0;width:100%;height:100%;z-index:-2}
+.glow{position:fixed;z-index:-1;width:46vmax;height:46vmax;border-radius:50%;filter:blur(90px);opacity:.28;animation:drift 22s ease-in-out infinite alternate;pointer-events:none}
+.g1{background:var(--a);top:-18vmax;left:-12vmax}.g2{background:var(--b);bottom:-22vmax;right:-14vmax;animation-delay:-9s}
+@keyframes drift{to{transform:translate(8vmax,6vmax) scale(1.15)}}
+.bar{position:fixed;top:0;left:0;height:3px;width:100%;background:linear-gradient(90deg,var(--a),var(--b));transform:scaleX(0);transform-origin:0 50%;z-index:20}
+@supports(animation-timeline:scroll()){.bar{animation:grow linear both;animation-timeline:scroll(root)}@keyframes grow{to{transform:scaleX(1)}}}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 70%,transparent);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;gap:1rem;padding-block:.7rem}
+.logo{font-weight:800;text-decoration:none;margin-right:auto}
+.logo span{color:var(--b)}
+header a.l{font-size:.9rem;color:var(--muted);text-decoration:none}
+header a.l:hover{color:var(--ink)}
+@media(max-width:700px){header a.l{display:none}}
+button{font:inherit;cursor:pointer}
+.tg{width:2.4rem;height:2.4rem;border-radius:50%;border:1px solid var(--line);background:var(--panel);color:var(--ink)}
+.hero{display:grid;gap:3rem;align-items:center;padding:4.5rem 0 3.5rem}
+@media(min-width:900px){.hero{grid-template-columns:1.1fr 1fr}}
+.hi{color:var(--b);font-family:var(--m);font-size:.95rem}
+h1{font-size:clamp(2.8rem,9vw,5.4rem);line-height:1.02;font-weight:800;margin:.4rem 0;letter-spacing:-.03em;background:linear-gradient(100deg,var(--ink) 30%,var(--a) 65%,var(--b));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 7s linear infinite}
+@keyframes sheen{to{background-position:-200% center}}
+.typed{font-size:clamp(1.15rem,3vw,1.6rem);font-weight:600;min-height:2.2rem}
+.typed i{display:inline-block;width:2px;height:1.2em;background:var(--b);margin-left:3px;vertical-align:-.2em;animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.lead{color:var(--muted);max-width:33rem}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem}
+.btn{display:inline-block;padding:.85rem 1.4rem;border-radius:12px;font-weight:600;text-decoration:none;border:1px solid var(--line);background:var(--panel);transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 28px -12px rgb(var(--node)/.6)}
+.btn.p{background:linear-gradient(100deg,var(--a),var(--b));color:#031018;border:0}
+.term{background:var(--term);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 30px 60px -30px rgb(var(--node)/.5);animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-10px)}}
+.term .h{display:flex;gap:.4rem;padding:.7rem 1rem;border-bottom:1px solid #ffffff14}
+.term .h b{width:.7rem;height:.7rem;border-radius:50%;background:#ff5f57}.term .h b:nth-child(2){background:#febc2e}.term .h b:nth-child(3){background:#28c840}
+.term pre{margin:0;padding:1.1rem 1.2rem;min-height:15rem;font:400 .86rem/1.75 var(--m);color:var(--termink);white-space:pre-wrap}
+.term .c{color:#7FB2FF}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;padding-bottom:3rem}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:1.3rem;text-align:center}
+.stat b{display:block;font-size:2.3rem;font-weight:800;color:var(--a)}
+.stat span{color:var(--muted);font-size:.9rem}
+section{padding:4rem 0}
+h2{font-size:clamp(1.8rem,4.5vw,2.7rem);font-weight:800;letter-spacing:-.02em;margin:0 0 2rem}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+.tl{position:relative;padding-left:1.8rem;border-left:2px solid var(--line)}
+.tl::before{content:"";position:absolute;left:-7px;top:.4rem;width:12px;height:12px;border-radius:50%;background:var(--b);box-shadow:0 0 0 6px color-mix(in srgb,var(--b) 25%,transparent)}
+.tl h3{margin:0;font-size:1.3rem}.tl p.m{color:var(--muted);margin:.2rem 0 1rem}
+.tl ul{padding-left:1.1rem;margin:0}.tl li{margin-bottom:.6rem;max-width:46rem}.tl li::marker{color:var(--b)}
+.grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:1.4rem;transition:transform .25s,border-color .25s}
+.card:hover{transform:translateY(-6px);border-color:var(--a)}
+.card h3{margin:0 0 .4rem;font-size:1.05rem}.card p{margin:0;color:var(--muted);font-size:.95rem}
+.mq{overflow:hidden;border-block:1px solid var(--line);padding:.9rem 0;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);margin-bottom:2rem}
+.mq div{display:flex;gap:2.5rem;width:max-content;animation:mq 30s linear infinite;font-family:var(--m);color:var(--muted)}
+@keyframes mq{to{transform:translateX(-50%)}}
+.chips{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.chips h3{margin:0 0 .6rem;font-size:1rem;color:var(--b)}
+.chips span{display:inline-block;margin:0 .35rem .4rem 0;padding:.25rem .7rem;border:1px solid var(--line);border-radius:99px;font-size:.85rem;background:var(--bg)}
+.two{display:grid;gap:1rem}@media(min-width:760px){.two{grid-template-columns:1fr 1fr}}
+form{display:grid;gap:1rem}
+label{display:grid;gap:.35rem;font-weight:600;font-size:.9rem}
+input,textarea{font:inherit;padding:.8rem 1rem;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+input:focus,textarea:focus{outline:2px solid var(--a);border-color:transparent}
+textarea{min-height:8rem;resize:vertical}
+.err{color:#E5484D;font-size:.85rem;font-weight:400;min-height:1em}
+.ok{display:none;padding:1rem;border-radius:12px;background:color-mix(in srgb,var(--b) 18%,transparent);border:1px solid var(--b)}
+.ok.show{display:block}
+.ct a.i{display:flex;align-items:center;gap:.8rem;padding:.9rem 1rem;margin-bottom:.7rem;border:1px solid var(--line);border-radius:12px;background:var(--panel);text-decoration:none;transition:border-color .2s,transform .2s;word-break:break-all}
+.ct a.i:hover{border-color:var(--b);transform:translateX(6px)}
+footer{padding:2rem 0 3rem;text-align:center;color:var(--muted);font-size:.85rem}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="net" aria-hidden="true"></canvas><div class="glow g1"></div><div class="glow g2"></div><div class="bar"></div>
+<header class="top"><div class="wrap">
+  <a class="logo" href="#top">Ritik<span>.</span>cloud</a>
+  <a class="l" href="#work">Experience</a><a class="l" href="#results">Results</a><a class="l" href="#skills">Skills</a><a class="l" href="#contact">Contact</a>
+  <button class="tg" id="tg" aria-label="Switch light or dark theme">◐</button>
+</div></header>
+
+<main class="wrap" id="top">
+  <div class="hero">
+    <div>
+      <div class="hi">Hi, I'm</div>
+      <h1>Ritik Goyal</h1>
+      <div class="typed" aria-live="off"><span id="ty"></span><i></i></div>
+      <p class="lead">I keep Linux servers on AWS and DigitalOcean fast, secure and automated. I've deployed and managed 300+ production websites, mostly on my own.</p>
+      <div class="cta"><a class="btn p" href="#contact">Contact me</a><a class="btn" href="https://github.com/Ritik0077" rel="noopener">GitHub</a><a class="btn" href="https://linkedin.com/in/ritik-goyal" rel="noopener">LinkedIn</a></div>
+    </div>
+    <div class="term" aria-hidden="true"><div class="h"><b></b><b></b><b></b></div><pre id="tp"></pre></div>
+  </div>
+
+  <div class="stats rv">
+    <div class="stat"><b data-to="300" data-s="+">0</b><span>Production websites</span></div>
+    <div class="stat"><b data-to="99.9" data-d="1" data-s="%">0</b><span>Uptime</span></div>
+    <div class="stat"><b data-to="8" data-s="">0</b><span>AWS EC2 instances (7–8)</span></div>
+    <div class="stat"><b data-to="50" data-s="+">0</b><span>Employees supported</span></div>
+  </div>
+
+  <section id="work"><h2 class="rv">Experience</h2>
+    <div class="tl rv">
+      <h3>Cloud Support Engineer / IT &amp; Server Administrator</h3>
+      <p class="m">Collectcent (digital marketing), Gurgaon · Aug 2023 to present</p>
+      <ul>
+        <li>Administer Ubuntu and CentOS servers over SSH: troubleshooting, log analysis, process management and security hardening.</li>
+        <li>Run AWS EC2 (7–8 high-traffic instances) with CloudWatch monitoring alongside DigitalOcean Droplets, keeping uptime at 99.9%.</li>
+        <li>Deploy and manage 300+ production websites on Apache and Nginx, configured from scratch.</li>
+        <li>Automate backups, cache clearing, SSL renewal and maintenance with Bash scripts and cron jobs.</li>
+        <li>Use CloudWatch alerts to catch performance bottlenecks before they reach production.</li>
+        <li>Manage SSL certificates, firewalls, SSH access control and security patches.</li>
+        <li>Support 50+ employees with hardware, network and application issues, with zero escalations.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="results"><h2 class="rv">Results</h2>
+    <div class="grid">
+      <div class="card rv"><h3>Downtime cut by 40%</h3><p>Migrated company websites to AWS and VPS, which also sped up page loads.</p></div>
+      <div class="card rv"><h3>300+ sites, no major outages</h3><p>Deployed and administered live blogs and company sites on my own.</p></div>
+      <div class="card rv"><h3>100% data recovery</h3><p>Built an automated backup system covering every hosted project.</p></div>
+      <div class="card rv"><h3>Zero SSL renewal issues</h3><p>Automated Certbot renewals through cron jobs.</p></div>
+      <div class="card rv"><h3>Fewer procurement delays</h3><p>Introduced a device tracking system for IT assets.</p></div>
+      <div class="card rv"><h3>Zero escalations</h3><p>Handled complete IT support for 50+ employees with fast resolution.</p></div>
+    </div>
+  </section>
+
+  <section id="skills"><h2 class="rv">Skills</h2>
+    <div class="mq" aria-hidden="true"><div id="mq"></div></div>
+    <div class="chips">
+      <div class="card rv"><h3>Cloud</h3><span>AWS EC2</span><span>S3</span><span>Route 53</span><span>CloudWatch</span><span>DigitalOcean</span><span>VPS</span></div>
+      <div class="card rv"><h3>Linux and automation</h3><span>Ubuntu</span><span>CentOS</span><span>SSH</span><span>Bash</span><span>Cron jobs</span><span>Basic CI/CD</span></div>
+      <div class="card rv"><h3>Web and hosting</h3><span>Apache</span><span>Nginx</span><span>WordPress</span><span>Laravel</span><span>PHP</span><span>MySQL CLI</span><span>phpMyAdmin</span></div>
+      <div class="card rv"><h3>Security and networking</h3><span>SSL</span><span>Firewalls</span><span>SSH hardening</span><span>DNS</span><span>DHCP</span><span>HTTP/S</span></div>
+    </div>
+  </section>
+
+  <section><div class="two">
+    <div class="card rv"><h3>Project: Server Health Monitor</h3><p>A Bash script that tracks CPU, RAM and disk usage and sends email alerts. <a href="https://github.com/Ritik0077" rel="noopener"><u>View on GitHub</u></a></p></div>
+    <div class="card rv"><h3>Education and certifications</h3><p>B.Tech in Computer Science, Dr. A.P.J. Abdul Kalam University, Aligarh (2023). AWS Cloud Practitioner in progress. CompTIA Network+ and Linux LPIC-1 planned.</p></div>
+  </div></section>
+
+  <section id="contact"><h2 class="rv">Let's work together</h2>
+    <div class="two">
+      <form class="card rv" id="f" novalidate>
+        <label>Your name<input id="n" autocomplete="name" required><span class="err" id="en"></span></label>
+        <label>Your email<input id="e" type="email" autocomplete="email" required><span class="err" id="ee"></span></label>
+        <label>Message<textarea id="m" required></textarea><span class="err" id="em"></span></label>
+        <button class="btn p" type="submit">Send message</button>
+        <div class="ok" id="ok" role="status">Your email app should open with the message ready to send. If nothing opened, <button type="button" class="btn" id="cp" style="padding:.3rem .8rem">copy the message</button> and email ritikroyal009@gmail.com.</div>
+      </form>
+      <div class="ct rv">
+        <a class="i" href="mailto:ritikroyal009@gmail.com">✉ ritikroyal009@gmail.com</a>
+        <a class="i" href="tel:+916399917983">☎ +91 63999 17983</a>
+        <a class="i" href="https://linkedin.com/in/ritik-goyal" rel="noopener">in linkedin.com/in/ritik-goyal</a>
+        <a class="i" href="https://github.com/Ritik0077" rel="noopener">⌥ github.com/Ritik0077</a>
+        <p style="color:var(--muted)">Based in Gurgaon, Haryana. Open to Cloud Support Engineer roles.</p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>© Ritik Goyal</footer>
+
+<script>
+(function(){
+var RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var root=document.documentElement;
+/* theme toggle */
+document.getElementById('tg').onclick=function(){
+  var dark=root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme=dark?'light':'dark';
+};
+/* typed roles */
+var roles=['Cloud Support Engineer','Linux Server Administrator','AWS and DigitalOcean','Bash Automation'],ty=document.getElementById('ty'),ri=0,ci=0,del=false;
+function tick(){
+  var w=roles[ri];
+  if(RM){ty.textContent=w;return}
+  ty.textContent=w.slice(0,ci);
+  if(!del&&ci===w.length){del=true;return setTimeout(tick,1600)}
+  if(del&&ci===0){del=false;ri=(ri+1)%roles.length}
+  ci+=del?-1:1;setTimeout(tick,del?35:70);
+}
+tick();
+/* terminal */
+var lines=[['$ ssh ritik@prod-ec2','c'],['connected. 8 instances healthy',''],['$ certbot renew --quiet','c'],['all certificates renewed',''],['$ ./server-health.sh','c'],['CPU ok | RAM ok | Disk ok',''],['$ crontab -l','c'],['0 2 * * * /opt/scripts/backup.sh','']],tp=document.getElementById('tp'),li=0;
+function line(){
+  if(li>=lines.length)return;
+  var l=lines[li++],s=document.createElement('span');if(l[1])s.className=l[1];tp.appendChild(s);
+  var i=0;(function t(){s.textContent=l[0].slice(0,i++);if(i<=l[0].length&&!RM)setTimeout(t,l[1]?45:12);else{tp.appendChild(document.createTextNode('\n'));setTimeout(line,RM?0:350)}})();
+}
+line();
+/* marquee */
+var sk=['AWS EC2','CloudWatch','Route 53','S3','DigitalOcean','Ubuntu','CentOS','Bash','Cron','Nginx','Apache','WordPress','Laravel','MySQL','SSL / Certbot','DNS','Firewalls'].map(function(x){return '<span>'+x+'</span>'}).join('');
+document.getElementById('mq').innerHTML=sk+sk;
+/* reveal + counters */
+function count(el){
+  var to=+el.dataset.to,d=+(el.dataset.d||0),s=el.dataset.s||'';
+  if(RM){el.textContent=to.toFixed(d)+s;return}
+  var t0=performance.now();(function f(t){var p=Math.min((t-t0)/1400,1),e=1-Math.pow(1-p,3);el.textContent=(to*e).toFixed(d)+s;if(p<1)requestAnimationFrame(f)})(t0);
+}
+var io=new IntersectionObserver(function(es){es.forEach(function(en){
+  if(!en.isIntersecting)return;en.target.classList.add('in');
+  en.target.querySelectorAll('[data-to]').forEach(count);io.unobserve(en.target)})},{threshold:.15});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+/* network canvas */
+var cv=document.getElementById('net'),cx=cv.getContext('2d'),P=[],W,H;
+function size(){W=cv.width=innerWidth;H=cv.height=innerHeight;P=[];var n=Math.min(70,Math.floor(W*H/24000));for(var i=0;i<n;i++)P.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35})}
+function draw(){
+  var c=getComputedStyle(root).getPropertyValue('--node').trim();cx.clearRect(0,0,W,H);
+  for(var i=0;i<P.length;i++){var a=P[i];
+    if(!RM){a.x+=a.vx;a.y+=a.vy;if(a.x<0||a.x>W)a.vx*=-1;if(a.y<0||a.y>H)a.vy*=-1}
+    cx.fillStyle='rgba('+c+',.55)';cx.beginPath();cx.arc(a.x,a.y,1.8,0,7);cx.fill();
+    for(var j=i+1;j<P.length;j++){var b=P[j],dx=a.x-b.x,dy=a.y-b.y,d=dx*dx+dy*dy;
+      if(d<19000){cx.strokeStyle='rgba('+c+','+(0.22*(1-d/19000))+')';cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(b.x,b.y);cx.stroke()}}}
+  if(!RM)requestAnimationFrame(draw);
+}
+size();draw();addEventListener('resize',function(){size();if(RM)draw()});
+/* contact form */
+var f=document.getElementById('f'),ok=document.getElementById('ok'),last='';
+function chk(id,eid,msg,test){var v=document.getElementById(id).value.trim(),e=document.getElementById(eid);e.textContent=test(v)?'':msg;return !!test(v)}
+f.onsubmit=function(ev){
+  ev.preventDefault();
+  var a=chk('n','en','Enter your name.',function(v){return v}),
+      b=chk('e','ee','Enter a valid email address.',function(v){return /^\S+@\S+\.\S+$/.test(v)}),
+      c=chk('m','em','Write a short message.',function(v){return v.length>4});
+  if(!(a&&b&&c))return;
+  var n=document.getElementById('n').value.trim(),e=document.getElementById('e').value.trim(),m=document.getElementById('m').value.trim();
+  last='Hi Ritik,\n\n'+m+'\n\nFrom: '+n+' ('+e+')';
+  ok.classList.add('show');
+  location.href='mailto:ritikroyal009@gmail.com?subject='+encodeURIComponent('Portfolio message from '+n)+'&body='+encodeURIComponent(last);
+};
+document.getElementById('cp').onclick=function(){
+  var b=this;function done(){b.textContent='Copied'}
+  try{navigator.clipboard.writeText(last).then(done,function(){b.textContent='Select and copy manually'})}catch(x){b.textContent='Select and copy manually'}
+};
+})();
+</script>
+</body>
+</html>
